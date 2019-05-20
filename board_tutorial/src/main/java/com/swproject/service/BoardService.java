@@ -6,14 +6,14 @@ import com.swproject.domain.BoardVO;
 
 public interface BoardService {
 
-	void register(BoardVO board);
+	public void register(BoardVO board);
 
-	BoardVO get(Long bno);
+	public BoardVO get(Long bno);
 
-	boolean modify(BoardVO board);
+	public boolean modify(BoardVO board);
 
-	boolean remove(Long bno);
+	public boolean remove(Long bno);
 
-	List<BoardVO> getList();
+	public List<BoardVO> getList();
 
 }

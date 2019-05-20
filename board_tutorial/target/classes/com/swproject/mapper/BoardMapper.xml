@@ -6,7 +6,7 @@
 
 	<select id="getList" resultType="com.swproject.domain.BoardVO">
 		<![CDATA[
-			select * from tbl_board where bno > 0
+			select * from tbl_board where bno > 0 order by bno
 		]]>
 	</select>
 
@@ -30,7 +30,7 @@
 	</select>
 	
 	<delete id="delete">
-		delete tbl_board where bno = #{bno}
+		delete from tbl_board where bno = #{bno}
 	</delete>
 	
 	<update id="update">

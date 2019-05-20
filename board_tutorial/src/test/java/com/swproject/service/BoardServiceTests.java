@@ -30,13 +30,13 @@ public class BoardServiceTests {
 	@Test
 	public void testRegister() {
 		BoardVO board = new BoardVO();
-		board.setTitle("»õ·Î ÀÛ¼ºÇÏ´Â ±Û");
-		board.setContent("»õ·Î ÀÛ¼ºÇÏ´Â ³»¿ë");
+		board.setTitle("ìƒˆë¡œ ì‘ì„±í•˜ëŠ” ê¸€");
+		board.setContent("ìƒˆë¡œ ì‘ì„±í•˜ëŠ” ë‚´ìš©");
 		board.setWriter("newbie");
 		
 		service.register(board);
 		
-		log.info("»ı¼ºµÈ °Ô½Ã¹°ÀÇ ¹øÈ£: "+board.getBno());
+		log.info("ìƒì„±ëœ ê²Œì‹œë¬¼ì˜ ë²ˆí˜¸: "+board.getBno());
 	}
 	
 	@Test
@@ -48,5 +48,22 @@ public class BoardServiceTests {
 	@Test
 	public void testGet() {
 		log.info(service.get(1L));
+	}
+	
+	@Test
+	public void testDelete() {
+		//ê²Œì‹œë¬¼ ë²ˆí˜¸ì˜ ì¡´ì¬ ì—¬ë¶€ë¥¼ í™•ì¸í•˜ê³  í…ŒìŠ¤íŠ¸í•  ê²ƒ
+		log.info("REMOVE RESULT: " +service.remove(2L));
+	}
+	
+	@Test
+	public void testUpdate() {
+		
+		BoardVO board = service.get(1L);
+		if(board==null) {
+			return;
+		}
+		board.setTitle("ì œëª© ìˆ˜ì •í•©ë‹ˆë‹¤.");
+		log.info("MODIFY RESULT: "+service.modify(board));
 	}
 }
