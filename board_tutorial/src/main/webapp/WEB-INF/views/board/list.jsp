@@ -31,8 +31,9 @@
                   <c:forEach items="${list}" var="board">
                      <tr>
                         <td><c:out value="${board.bno}" /></td>
-                        <td><a class='move' href='<c:out value = "${board.bno}"/>'>
-                              <c:out value="${board.title}" />
+                        <!-- <td><a class='move' href='<c:out value = "${board.bno}"/>'>-->
+                        <td><a href='/board/read?bno=${board.bno}'>${board.title}
+                              <!--<c:out value="${board.title}" />-->
                         </a></td>
 
                         <td><c:out value="${board.writer}" /></td>
@@ -48,4 +49,14 @@
       </div>
    </div>
 </div>
+
+<script>
+	var result = '$(msg)';
+	
+	if(result=='SUCCESS'){
+		alert("처리가 완료되었습니다.");
+	}
+	
+</script>
+
 <%@ include file="../includes/footer.jsp"%>

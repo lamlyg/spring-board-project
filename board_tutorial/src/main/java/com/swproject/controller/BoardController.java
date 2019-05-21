@@ -44,15 +44,6 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-//	@PostMapping("/register")
-//	public String register(BoardVO board, RedirectAttributes rttr) {
-//		log.info("register: "+board);
-//		
-//		service.register(board);
-//		rttr.addAttribute("result", board.getBno());
-//		return "redirect:/board/list";
-//	}
-	
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public String read(@RequestParam("bno") Long bno, Model model) {
 		log.info("read page get...");
@@ -66,13 +57,19 @@ public class BoardController {
 		model.addAttribute("board", service.get(bno));
 	}
 	
-	@PostMapping("/modify")
-	public String modify(BoardVO board, RedirectAttributes rttr) {
-		log.info("modify:" + board);
-		
-		if(service.modify(board)) {
-			rttr.addFlashAttribute("result", "success");
-		}
+	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	public String modifyGET(@RequestParam("bno") Long bno, Model model) {
+		log.info("modify page get...");
+		model.addAttribute(service.get(bno));
+		return "board/modify";
+	}
+	
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
+	public String modifyPOST(BoardVO board, RedirectAttributes rttr) {
+		log.info("modify page post...");
+		log.info(board.toString());
+		service.modify(board);
+		rttr.addFlashAttribute("msg","SUCCESS");
 		return "redirect:/board/list";
 	}
 	
