@@ -18,9 +18,7 @@
 
 			<div class="panel-body">
 				<form role="form" action="/board/register" method="post">
-					<div class="form-group">
-						<label>Bno</label><input class="form-control" name='bno'>
-					</div>
+					
 					<div class="form-group">
 						<label>Title</label><input class="form-control" name='title'>
 					</div>
@@ -31,10 +29,11 @@
 					<div class="form-group">
 						<label>Writer</label><input class="form-control" name='writer'>
 					</div>
+					
 					<button id="SubmitBtn" type="submit" class="btn btn-default">
-						Modify</button>
+						Submit Button</button>
+					<button type="reset" class="btn btn-default">Reset Button</button>
 					<button id="ListBtn" class="btn btn-default">List</button>
-					<button type="reset" class="btn btn-default">Delete</button>
 				</form>
 			</div>
 		</div>

@@ -21,20 +21,20 @@
 				<form role="form" method="post" action="/board/modify">
 					<div class="form-group">
 						<label>Bno</label> <input class="form-control" name='bno'
-							value='<c:out value="${board.bno }"/>' readonly="readonly" />
+							value="${board.bno }" readonly="readonly" />
 					</div>
 					<div class="form-group">
 						<label>Title</label> <input class="form-control" name='title'
-							value='<c:out value="${board.title }"/>'>
+							value="${board.title }">
 					</div>
 					<div class="form-group">
 						<label>Text area</label>
-						<textarea class="form-control" rows="3" name='content'><c:out
-								value="${board.content }" /></textarea>
+						<textarea class="form-control" rows="3" name='content'>
+						<c:out value="${board.content }" /></textarea>
 					</div>
 					<div class="form-group">
 						<label>Writer</label> <input class="form-control" name='writer'
-							value='<c:out value="${board.writer}"/>' readonly="readonly">
+							value="${board.writer}" readonly="readonly">
 					</div>
 					<div class="form-group">
 						<label>RegDate</label> <input class="form-control" name='regDate'
@@ -48,10 +48,9 @@
 							value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updateDate}" />'
 							readonly="readonly">
 					</div>
-
-					<button type="submit" data-oper='modify' class="btn btn-default">Modify</button>
-					<button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>
-					<button type="submit" data-oper='list' class="btn btn-info">List</button>
+					
+				<button id="ModiBtn" class="btn btn-default">Modify</button>
+				<button id="ListBtn" class="btn btn-default">List</button>
 				</form>
 			</div>
 			<!-- <form id="Form" method="post">
@@ -62,14 +61,13 @@
 	<!--  end panel-body -->
 </div>
 <!--  end panel -->
-</div>
+
 <!--  /.row -->
 
 <script>
 	$(document).ready(function() {
 		$("#ListBtn").on("click", function() {
-			vat
-			formobj = $("form[role='form']");
+			var formobj = $("form[role='form']");
 			formobj.attr("action", "/board/list");
 			formobj.attr("method", "get");
 			formobj.submit();

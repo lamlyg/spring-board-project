@@ -51,11 +51,11 @@ public class BoardController {
 		return "board/read";
 	}
 	
-	@GetMapping({"/get"})
-	public void get(@RequestParam("bno") Long bno, Model model) {
-		log.info("/get");
-		model.addAttribute("board", service.get(bno));
-	}
+//	@GetMapping({"/get"})
+//	public void get(@RequestParam("bno") Long bno, Model model) {
+//		log.info("/get");
+//		model.addAttribute("board", service.get(bno));
+//	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
 	public String modifyGET(@RequestParam("bno") Long bno, Model model) {
@@ -73,12 +73,13 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	@PostMapping("/remove")
+	@RequestMapping(value="/remove",method=RequestMethod.POST)
 	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
-		log.info("remove..."+bno);
-		if(service.remove(bno)) {
-			rttr.addFlashAttribute("result","success");
-		}
+		log.info("remove page...");
+		service.remove(bno);
+		
+		rttr.addFlashAttribute("msg","SUCCESS");
+		
 		return "redirect:/board/list";
 	}
 }

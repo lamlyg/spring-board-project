@@ -31,8 +31,7 @@
 				<div class="form-group">
 				<label>Text area</label>
 				<textarea class="form-control" rows="3" name='content' readonly="readonly">
-				<c:out value="${board.content }"/>
-				</textarea>
+				<c:out value="${board.content }"/></textarea>
 				</div>
 				
 				<div class="form-group">
@@ -40,7 +39,7 @@
 				value='<c:out value="${board.writer}"/>' readonly="readonly">
 				</div>
 				
-				<button id="ModiBtn" class="btn btn-default" onclick="location.href='/board/modify'">Modify</button>
+				<button id="ModiBtn" class="btn btn-default">Modify</button>
 				<button id="ListBtn" class="btn btn-default" onclick="location.href='/board/list'">List</button>
 				<button id="DelBtn" class="btn btn-default">Delete</button>
 			</div>
@@ -55,7 +54,7 @@
 
 <script>
 	$(document).ready(function() {
-		var Formobj = $("#From");
+		var Formobj = $("#Form");
 
 		$("#ModiBtn").on("click", function() {
 			Formobj.attr("action", "/board/modify");
