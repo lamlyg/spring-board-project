@@ -19,13 +19,13 @@
 			<div class="panel-body">
 
 				<div class="form-group">
-					<label>Bno</label> <input class="form-control" name='bno'
-						value='<c:out value="${board.bno }"/>' readonly="readonly">
+					<label>Bno</label> <input class="form-control" name= 'bno'
+						value='<c:out value="${board.bno}"/>' readonly="readonly">
 				</div>
 
 				<div class="form-group">
 					<label>Title</label> <input class="form-control" name='title'
-						value='<c:out value="${board.title }"/>' readonly="readonly">
+						value='<c:out value="${board.title}"/>' readonly="readonly">
 				</div>
 
 				<div class="form-group">
@@ -56,7 +56,7 @@
 
 <script>
 	$(document).ready(function() {
-		var Formobj = $("Form");
+		var Formobj = $("#Form");
 
 		$("#ModiBtn").on("click", function() {
 			Formobj.attr("action", "/board/modify");

@@ -14,7 +14,7 @@
    <div class="col-lg-12">
       <div class="panel panel-default">
          <div class="panel-heading">Board List page
-         	<button id='regBtn' type="button" onclick="location.href='/board/register'" class="btn btn-xs pull-right">
+         	<button id='regBtn' type="button" onclick="location.href='board/register'" class="btn btn-xs pull-right">
          	Register New Board</button><!-- 글 등록 링크 처리를 위한 버튼 -->
          </div>
 
