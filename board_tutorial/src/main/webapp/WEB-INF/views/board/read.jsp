@@ -17,44 +17,46 @@
 			<!-- penel-heading -->
 
 			<div class="panel-body">
-				
+
 				<div class="form-group">
-				<label>Bno</label> <input class="form-control" name='bno'
-				value='<c:out value="${board.bno }"/>' readonly="readonly">
+					<label>Bno</label> <input class="form-control" name='bno'
+						value='<c:out value="${board.bno }"/>' readonly="readonly">
 				</div>
-				
+
 				<div class="form-group">
-				<label>Title</label> <input class="form-control" name='title'
-				value='<c:out value="${board.title }"/>' readonly="readonly">
+					<label>Title</label> <input class="form-control" name='title'
+						value='<c:out value="${board.title }"/>' readonly="readonly">
 				</div>
-				
+
 				<div class="form-group">
-				<label>Text area</label>
-				<textarea class="form-control" rows="3" name='content' readonly="readonly">
-				<c:out value="${board.content }"/></textarea>
+					<label>Text area</label>
+					<textarea class="form-control" rows="3" name='content'
+						readonly="readonly">
+				<c:out value="${board.content }" /></textarea>
 				</div>
-				
+
 				<div class="form-group">
-				<label>Writer</label> <input class="form-control" name='writer'
-				value='<c:out value="${board.writer}"/>' readonly="readonly">
+					<label>Writer</label> <input class="form-control" name='writer'
+						value='<c:out value="${board.writer}"/>' readonly="readonly">
 				</div>
-				
+
 				<button id="ModiBtn" class="btn btn-default">Modify</button>
-				<button id="ListBtn" class="btn btn-default" onclick="location.href='/board/list'">List</button>
+				<button id="ListBtn" class="btn btn-default"
+					onclick="location.href='/board/list'">List</button>
 				<button id="DelBtn" class="btn btn-default">Delete</button>
 			</div>
-			
+
 			<form id="Form" method="post">
 				<input type="hidden" name="bno" value="${board.bno}">
 			</form>
-			
+
 		</div>
 	</div>
 </div>
 
 <script>
 	$(document).ready(function() {
-		var Formobj = $("#Form");
+		var Formobj = $("Form");
 
 		$("#ModiBtn").on("click", function() {
 			Formobj.attr("action", "/board/modify");

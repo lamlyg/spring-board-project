@@ -47,7 +47,7 @@ public class BoardController {
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public String read(@RequestParam("bno") Long bno, Model model) {
 		log.info("read page get...");
-		model.addAttribute(service.get(bno));
+		model.addAttribute(service.read(bno));
 		return "board/read";
 	}
 	
@@ -60,7 +60,7 @@ public class BoardController {
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
 	public String modifyGET(@RequestParam("bno") Long bno, Model model) {
 		log.info("modify page get...");
-		model.addAttribute(service.get(bno));
+		model.addAttribute(service.read(bno));
 		return "board/modify";
 	}
 	

@@ -27,7 +27,7 @@ public class BoardServiceImpl implements BoardService{
 		mapper.insertSelectKey(board);
 	}
 	@Override
-	public BoardVO get(Long bno) {
+	public BoardVO read(Long bno) {
 		log.info("get...."+bno);
 		return mapper.read(bno);
 	}

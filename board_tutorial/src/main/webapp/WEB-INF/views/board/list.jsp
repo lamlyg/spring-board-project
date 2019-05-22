@@ -19,7 +19,7 @@
          </div>
 
          <div class="panel-body">
-            <table class="table table-striped table-bordered table-hover">
+            <table class="table table-striped table-boardered table-hover">
                <thead>
                   <tr>
                      <th>#번호</th>
@@ -28,22 +28,24 @@
                      <th>작성일</th>
                      <th>수정일</th>
                   </tr>
+               </thead>
                   <c:forEach items="${list}" var="board">
                      <tr>
-                        <td><c:out value="${board.bno}" /></td>
+                        <!-- <td><c:out value="${board.bno}" /></td> -->
+                        <td>${board.bno}</td>
                         <!-- <td><a class='move' href='<c:out value = "${board.bno}"/>'>-->
                         <td><a href='/board/read?bno=${board.bno}'>${board.title}
-                              <!--<c:out value="${board.title}" />-->
                         </a></td>
+                              <!--<c:out value="${board.title}" />-->
 
-                        <td><c:out value="${board.writer}" /></td>
+                        <!-- <td><c:out value="${board.writer}" /></td> -->
+                        <td>${board.writer}</td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd"
-                              value="${board.regdate }" /></td>
+                              value="${board.regdate}" /></td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd"
-                              value="${board.updateDate }" /></td>
+                              value="${board.updateDate}" /></td>
                      </tr>
                   </c:forEach>
-               </thead>
             </table>
          </div>
       </div>
