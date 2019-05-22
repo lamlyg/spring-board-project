@@ -36,25 +36,14 @@
 						<label>Writer</label> <input class="form-control" name='writer'
 							value="${board.writer}" readonly="readonly">
 					</div>
-					<div class="form-group">
-						<label>RegDate</label> <input class="form-control" name='regDate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.regdate}" />'
-							readonly="readonly">
-					</div>
-
-					<div class="form-group">
-						<label>Update Date</label> <input class="form-control"
-							name='updateDate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updateDate}" />'
-							readonly="readonly">
-					</div>
 					
 				<button id="ModiBtn" class="btn btn-default">Modify</button>
-				<button id="ListBtn" class="btn btn-default">List</button>
-				</form>
+				<button id="ListBtn" class="btn btn-default" onclick="location.href='/board/list'">List</button>
+				
 			</div>
-			<!-- <form id="Form" method="post">
-	 				<input type="hidden" name="bno" value="${board.bno}"> -->
+			<form id="Form" method="post">
+	 				<input type="hidden" name="bno" value="${board.bno}"> 
+			</form>
 		</div>
 		<!--  end panel-body -->
 	</div>
