@@ -61,7 +61,7 @@
 			formobj.attr("method", "get");
 			formobj.submit();
 		});
-		$("#ModiBtn").on("click", function() {
+		$("#ModiBtn").on("click", function() {				
 			if ($("input[name=title]").val() == "") {
 				alert("제목을 입력하세요!");
 				$("input[name='title']").focus();
