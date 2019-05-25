@@ -27,6 +27,7 @@
                      <th>작성자</th>
                      <th>작성일</th>
                      <th>수정일</th>
+                     <th>조회수</th>
                   </tr>
                </thead>
                   <c:forEach items="${list}" var="board">
@@ -44,6 +45,7 @@
                               value="${board.regdate}" /></td>
                         <td><fmt:formatDate pattern="yyyy-MM-dd"
                               value="${board.updateDate}" /></td>
+                        <td><c:out value="${board.viewcnt}"/></td>
                      </tr>
                   </c:forEach>
             </table>

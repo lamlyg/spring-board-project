@@ -6,7 +6,8 @@ create table tbl_board (
     content varchar2(2000) not null,
     writer varchar2(50) not null,
     regdate date default sysdate,
-    updatedate date default sysdate
+    updatedate date default sysdate,
+    viewcnt int default 0
 );
 
 alter table tbl_board add constraint pk_board
@@ -22,3 +23,7 @@ select * from tbl_board where bno > 0 order by bno;
 
 delete from tbl_board where bno = 5;
 
+
+drop table tbl_board;
+
+drop sequence seq_board;

@@ -11,8 +11,7 @@
 	</select>
 
 	<insert id="insert">
-		insert into tbl_board (bno,title,content,writer)
-		values (seq_board.nextval, #{title}, #{content}, #{writer})
+		insert into tbl_board (bno,title,content,writer) values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
 	
 	<insert id="insertSelectKey">
@@ -20,9 +19,7 @@
 			resultType="long">
 			select seq_board.nextval from dual
 		</selectKey>
-		
-		insert into tbl_board (bno, title, content, writer)
-		values (#{bno},#{title},#{content},#{writer})
+		insert into tbl_board (bno, title, content, writer) values (#{bno},#{title},#{content},#{writer})
 	</insert>
 	
 	<select id="read" resultType="com.swproject.domain.BoardVO">
@@ -40,4 +37,9 @@
 		writer=#{writer},
 		updateDate=sysdate where bno=#{bno}
 	</update>
+	
+	<update id="updateViewCnt">
+		update tbl_board set viewcnt = viewcnt + 1 where bno = #{bno}
+	</update>
+	
 </mapper>

@@ -1,6 +1,9 @@
 package com.swproject.service;
 
 import java.util.List;
+
+import javax.xml.stream.events.Namespace;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
@@ -29,6 +32,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardVO read(Long bno) {
 		log.info("get...."+bno);
+		mapper.updateViewCnt(bno);
 		return mapper.read(bno);
 	}
 
@@ -51,5 +55,11 @@ public class BoardServiceImpl implements BoardService{
 		log.info("getList....");
 		return mapper.getList();
 	}
+	
+//	@Override
+//	public BoardVO updateViewCnt(Long bno) {
+//		mapper.updateViewCnt(bno);
+//		return mapper.read(bno);
+//	}
 }
 
