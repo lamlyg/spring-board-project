@@ -1,4 +1,4 @@
-create sequence seq_board;
+create sequence seq_board increment by 1 start with 1;
 
 create table tbl_board (
     bno number(10,0),
