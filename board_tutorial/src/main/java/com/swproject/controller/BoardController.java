@@ -46,7 +46,6 @@ public class BoardController {
 	
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public String read(@RequestParam("bno") Long bno, Model model) {
-//		service.updateViewCnt(bno);
 		log.info("read page get...");
 		model.addAttribute("board",service.read(bno));
 		return "board/read";

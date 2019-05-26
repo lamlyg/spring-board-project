@@ -21,4 +21,6 @@ public interface BoardMapper {
 	public int update(BoardVO board);
 	
 	public void updateViewCnt(Long bno);
+	
+	public List<BoardVO> search(String word);
 }

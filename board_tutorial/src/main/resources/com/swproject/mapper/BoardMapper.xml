@@ -42,4 +42,8 @@
 		update tbl_board set viewcnt = viewcnt + 1 where bno = #{bno}
 	</update>
 	
+	<select id="search">
+		select * from tbl_board where title=#{word}
+	</select>
+	
 </mapper>

@@ -16,4 +16,5 @@ public interface BoardService {
 
 	public List<BoardVO> getList();
 
+	public List<BoardVO> searchList(String word);
 }

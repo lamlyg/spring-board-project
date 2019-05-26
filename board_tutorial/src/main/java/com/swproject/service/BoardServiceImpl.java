@@ -56,6 +56,10 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.getList();
 	}
 	
+	@Override
+	public List<BoardVO> searchList(String word){
+		return mapper.search(word);
+	}
 //	@Override
 //	public BoardVO updateViewCnt(Long bno) {
 //		mapper.updateViewCnt(bno);
